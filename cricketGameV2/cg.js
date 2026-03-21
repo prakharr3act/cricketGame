@@ -37,11 +37,19 @@ function botChoiceGenerate(){
 }
 
 function displayResult(){
+  let result = "";
+
   if(userChoice === botChoice){
-    ResultText.innerText = "Tie";
+    result = "It's a Tie!";
+  } else if(
+    (userChoice === "Bat" && botChoice === "Ball") ||
+    (userChoice === "Ball" && botChoice === "Stump") ||
+    (userChoice === "Stump" && botChoice === "Bat")
+  ){
+    result = "You Win!";
   } else {
-    ResultText.innerText = `You: ${userChoice} | Bot: ${botChoice}`;
+    result = "Bot Wins!";
   }
+
+  ResultText.innerText = `You: ${userChoice} | Bot: ${botChoice} | ${result}`;
 }
-
-
