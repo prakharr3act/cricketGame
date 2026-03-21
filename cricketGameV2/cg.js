@@ -36,11 +36,12 @@ function botChoiceGenerate(){
   }
 }
 
-let  Score = {
+let Score = {
   win: 0,
   lost: 0,
   tie: 0,
 }
+
 function displayResult(){
   let result = "";
 
@@ -48,16 +49,17 @@ function displayResult(){
     result = "It's a Tie!";
     Score.tie++;
   } else if(
-    (userChoice === "Bat" && botChoice === "Ball") ||
-    (userChoice === "Ball" && botChoice === "Stump") ||
-    (userChoice === "Stump" && botChoice === "Bat")
+    (userChoice === "bat" && botChoice === "ball") ||
+    (userChoice === "ball" && botChoice === "stump") ||
+    (userChoice === "stump" && botChoice === "bat")
   ){
     result = "You Win!";
-     Score.win++;
+    Score.win++;
   } else {
     result = "Bot Wins!";
-     Score.lost++;
+    Score.lost++;
   }
 
   ResultText.innerText = `You: ${userChoice} | Bot: ${botChoice} | ${result}`;
+  ResultArray.innerText = `[Win:${Score.win}| Lost: ${Score.lost} |Tie:${Score.tie}]`
 }
