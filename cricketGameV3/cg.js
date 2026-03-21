@@ -4,7 +4,6 @@ let botChoice;
 const ResultText = document.querySelector("p");
 const ResultArray = document.querySelector("h5");
 
-
 function batChoice(){
   userChoice = "bat";
   botChoiceGenerate();
@@ -24,7 +23,7 @@ function stumpChoice(){
 }
 
 function botChoiceGenerate(){
-  let randomNum = Math.floor(Math.random()*1);
+  let randomNum = Math.floor(Math.random()*3);
 
   if(randomNum === 0){
     botChoice = "bat";
@@ -37,11 +36,15 @@ function botChoiceGenerate(){
   }
 }
 
-let  Score = {
+let Score = {
   win: 0,
   lost: 0,
   tie: 0,
+  displayScore(){
+      ResultArray.innerText = `[Win:${Score.win}| Lost: ${Score.lost} |Tie:${Score.tie}]`
+  }
 }
+
 function displayResult(){
   let result = "";
 
@@ -49,17 +52,17 @@ function displayResult(){
     result = "It's a Tie!";
     Score.tie++;
   } else if(
-    (userChoice === "Bat" && botChoice === "Ball") ||
-    (userChoice === "Ball" && botChoice === "Stump") ||
-    (userChoice === "Stump" && botChoice === "Bat")
+    (userChoice === "bat" && botChoice === "ball") ||
+    (userChoice === "ball" && botChoice === "stump") ||
+    (userChoice === "stump" && botChoice === "bat")
   ){
     result = "You Win!";
-     Score.win++;
+    Score.win++;
   } else {
     result = "Bot Wins!";
-     Score.lost++;
+    Score.lost++;
   }
 
   ResultText.innerText = `You: ${userChoice} | Bot: ${botChoice} | ${result}`;
-  ResultArray.innerText = `[Win:${Score.win}| Lost: ${Score.lost} |Tie:${Score.tie}]`
+   Score.displayScore();
 }
