@@ -36,19 +36,27 @@ function botChoiceGenerate(){
   }
 }
 
+let  Score = {
+  win: 0,
+  lost: 0,
+  tie: 0,
+}
 function displayResult(){
   let result = "";
 
   if(userChoice === botChoice){
     result = "It's a Tie!";
+    Score.tie++;
   } else if(
     (userChoice === "Bat" && botChoice === "Ball") ||
     (userChoice === "Ball" && botChoice === "Stump") ||
     (userChoice === "Stump" && botChoice === "Bat")
   ){
     result = "You Win!";
+     Score.win++;
   } else {
     result = "Bot Wins!";
+     Score.lost++;
   }
 
   ResultText.innerText = `You: ${userChoice} | Bot: ${botChoice} | ${result}`;
