@@ -78,3 +78,13 @@ function displayResult(){
 
   Score.displayScore();
 }
+
+function resetfnc(){
+  localStorage.removeItem("score");
+  
+  Score.win = 0;
+  Score.lost = 0;
+  Score.tie = 0;
+
+  Score.displayScore();
+}

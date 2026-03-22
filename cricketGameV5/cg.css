@@ -28,7 +28,7 @@ div{
   box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
-button{
+.btn{
   position:relative;
   padding:12px 22px;
   border-radius:14px;
@@ -46,7 +46,7 @@ button{
   width:150px;
 }
 
-button::before{
+.btn::before{
   content:"";
   position:absolute;
   inset:0;
@@ -55,21 +55,21 @@ button::before{
   transition:.4s;
 }
 
-button:hover::before{
+.btn:hover::before{
   opacity:1;
 }
 
-button:hover{
+.btn:hover{
   background:#e2e8f0;
   border-color:#94a3b8;
   transform:translateY(-3px) scale(1.02);
 }
 
-button:active{
+.btn:active{
   transform:scale(.96);
 }
 
-button:focus{
+.btn:focus{
   outline:none;
   box-shadow:0 0 0 2px rgba(59,130,246,0.3);
 }
