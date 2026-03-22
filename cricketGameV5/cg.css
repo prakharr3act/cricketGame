@@ -78,16 +78,16 @@ p{
   font-size:15px;
   color:#475569;
   letter-spacing:.4px;
-    position: absolute;
-  bottom: 160px;
+  position:absolute;
+  bottom:160px;
 }
 
 h3{
   font-size:17px;
   color:#475569;
   letter-spacing:.4px;
-    position: absolute;
-  bottom: 120px;
+  position:absolute;
+  bottom:120px;
 }
 
 img{
@@ -95,20 +95,19 @@ img{
 }
 
 .resetbtn{
-  height:35px;
-  padding:10px 10px;
-  border-radius:5px;
+  height:38px;
+  padding:10px 38px;
+  border-radius:8px;
   background:#e2e8f0;
-  position:static;
+  border:none;
 }
 
 .resetbtn:focus{
   box-shadow:0 0 0 2px rgba(59,130,246,0.3);
 }
 
-
 .resetDiv{
-  padding:10px 10px;
+  padding:5px 5px;
   position:absolute;
   bottom:40px;
   left:50%;
