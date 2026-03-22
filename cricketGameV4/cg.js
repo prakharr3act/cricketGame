@@ -2,7 +2,7 @@ let userChoice;
 let botChoice;
 
 const ResultText = document.querySelector("p");
-const ResultArray = document.querySelector("h5");
+const ResultArray = document.querySelector("h3");
 
 
 let Score = JSON.parse(localStorage.getItem("score")) || {
