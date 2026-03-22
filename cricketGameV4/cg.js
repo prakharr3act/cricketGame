@@ -5,6 +5,21 @@ const ResultText = document.querySelector("p");
 const ResultArray = document.querySelector("h5");
 
 
+let Score = JSON.parse(localStorage.getItem("score")) || {
+  win: 0,
+  lost: 0,
+  tie: 0
+};
+
+
+Score.displayScore = function(){
+  ResultArray.innerText = `[Win:${Score.win} | Lost:${Score.lost} | Tie:${Score.tie}]`;
+};
+
+
+Score.displayScore();
+
+
 function batChoice(){
   userChoice = "bat";
   botChoiceGenerate();
@@ -37,15 +52,6 @@ function botChoiceGenerate(){
   }
 }
 
-let Score =  {
-  win: 0,
-  lost: 0,
-  tie: 0,
-  displayScore(){
-      ResultArray.innerText = `[Win:${Score.win}| Lost: ${Score.lost} |Tie:${Score.tie}]`
-  }
-}
-
 function displayResult(){
   let result = "";
 
@@ -65,6 +71,10 @@ function displayResult(){
   }
 
   ResultText.innerText = `You: ${userChoice} | Bot: ${botChoice} | ${result}`;
-   Score.displayScore();
-}
 
+ 
+  localStorage.setItem("score", JSON.stringify(Score));
+
+
+  Score.displayScore();
+}
