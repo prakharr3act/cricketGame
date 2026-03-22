@@ -4,6 +4,7 @@ let botChoice;
 const ResultText = document.querySelector("p");
 const ResultArray = document.querySelector("h5");
 
+
 function batChoice(){
   userChoice = "bat";
   botChoiceGenerate();
@@ -36,7 +37,7 @@ function botChoiceGenerate(){
   }
 }
 
-let Score = {
+let Score =  {
   win: 0,
   lost: 0,
   tie: 0,
@@ -53,7 +54,7 @@ function displayResult(){
     Score.tie++;
   } else if(
     (userChoice === "bat" && botChoice === "ball") ||
-    (userChoice === "ball" && botChoice === "stump") ||
+    (userChoice === "ball" && botChoice === "stump") || 
     (userChoice === "stump" && botChoice === "bat")
   ){
     result = "You Win!";
@@ -66,3 +67,4 @@ function displayResult(){
   ResultText.innerText = `You: ${userChoice} | Bot: ${botChoice} | ${result}`;
    Score.displayScore();
 }
+
